@@ -7,21 +7,25 @@ import WelcomeScreen from '../pages/WelcomeScreen';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import UserDrawer from './UserDrawer';
-
+import Context from '../context/context';
 const Stack = createStackNavigator();
 
 const Navigators = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: true}}>
-        <Stack.Screen name={'OnboardingScreen'} component={OnboardingScreen} />
-        <Stack.Screen name={'WelcomeScreen'} component={WelcomeScreen} />
-        <Stack.Screen name={'Login'} component={Login} />
-        <Stack.Screen name={'SignUp'} component={SignUp} />
-        <Stack.Screen name={'User'} component={User} />
-
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Context.Provider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen
+            name={'OnboardingScreen'}
+            component={OnboardingScreen}
+          />
+          <Stack.Screen name={'WelcomeScreen'} component={WelcomeScreen} />
+          <Stack.Screen name={'Login'} component={Login} />
+          <Stack.Screen name={'SignUp'} component={SignUp} />
+          <Stack.Screen name={'User'} component={User} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Context.Provider>
   );
 };
 
