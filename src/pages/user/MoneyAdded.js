@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import React from 'react';
 // import {UserView} from '../../components';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
@@ -28,59 +28,62 @@ const MoneyAdded = ({navigation, route}) => {
   return (
     <UserView>
       <TopNavigator navigation={navigation} title="Money Added" />
-
-      <View style={WhiteContainerStyles.container}>
-        <View style={{gap: responsiveWidth(2)}}>
-          <Text
-            style={{
-              fontWeight: 600,
-              fontSize: responsiveFontSize(3),
-              color: Colors.black,
-              textAlign: 'center',
-              lineHeight: 35,
-            }}>
-            Money successfully added to your wallet
-          </Text>
-
-          {/* green Box  */}
-
-          <View style={styles.greenBox}>
-            <View>
-              <Icon
-                name="checkmark-circle-outline"
-                size={63}
-                color={'#fff'}
-                style={{marginBottom: 10, textAlign: 'center'}}></Icon>
-              <Text style={styles.boldPrice}> ₹ 1000.00</Text>
-            </View>
-          </View>
-
-          <View>
+      
+        <View style={WhiteContainerStyles.container}>
+          <ScrollView>
+          <View style={{gap: responsiveWidth(2)}}>
             <Text
               style={{
                 fontWeight: 600,
                 fontSize: responsiveFontSize(3),
                 color: Colors.black,
+                textAlign: 'center',
                 lineHeight: 35,
-                marginTop: 10,
               }}>
-              Available Balance
+              Money successfully added to your wallet
             </Text>
 
-            {/* blueBox  */}
-            <View style={styles.blueBox}>
-              <Text style={styles.boldPrice}> ₹ 1200.00</Text>
-              <Icon
-                name="wallet"
-                size={43}
-                color={'#FFFC48'}
-                style={{marginBottom: 10, textAlign: 'center'}}></Icon>
+            {/* green Box  */}
+
+            <View style={styles.greenBox}>
+              <View>
+                <Icon
+                  name="checkmark-circle-outline"
+                  size={63}
+                  color={'#fff'}
+                  style={{marginBottom: 10, textAlign: 'center'}}></Icon>
+                <Text style={styles.boldPrice}> ₹ 1000.00</Text>
+              </View>
             </View>
 
-            <BlueButton title={'Pay from your wallet'}></BlueButton>
+            <View>
+              <Text
+                style={{
+                  fontWeight: 600,
+                  fontSize: responsiveFontSize(3),
+                  color: Colors.black,
+                  lineHeight: 35,
+                  marginTop: 10,
+                }}>
+                Available Balance
+              </Text>
+
+              {/* blueBox  */}
+              <View style={styles.blueBox}>
+                <Text style={styles.boldPrice}> ₹ 1200.00</Text>
+                <Icon
+                  name="wallet"
+                  size={43}
+                  color={'#FFFC48'}
+                  style={{marginBottom: 10, textAlign: 'center'}}></Icon>
+              </View>
+
+              <BlueButton title={'Pay from your wallet'}></BlueButton>
+            </View>
           </View>
+          </ScrollView>
         </View>
-      </View>
+      
     </UserView>
   );
 };
