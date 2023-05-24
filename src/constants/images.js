@@ -36,4 +36,6 @@ export default {
   otp: require('../assets/images/otp.png'),
   facebookIcon: require('../assets/images/facebookIcon.png'),
   googleIcon: require('../assets/images/googleIcon.png'),
+  step: require('../assets/images/step.png'),
+  callPersons: require('../assets/images/callPersons.png'),
 };

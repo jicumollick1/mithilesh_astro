@@ -80,11 +80,11 @@ function UserCustomDrawer({navigation, props}) {
               activeOpacity={1}
               onPress={() => navigation.closeDrawer()}
               style={styles.backBtn}>
-              <Image
+              {/* <Image
                 source={Icons.arrowLeftGrey}
                 resizeMode="contain"
                 style={styles.btnArrow}
-              />
+              /> */}
               <Text style={styles.btnText}>Back</Text>
             </TouchableOpacity>
           </View>

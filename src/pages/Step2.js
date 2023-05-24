@@ -19,125 +19,42 @@ import UserView from '../components/UserView';
 import {Fonts, Images} from '../constants';
 import {useState} from 'react';
 import images from '../constants/images';
+import Form2 from '../components/reusable/Form2';
 
-export default function SignUp({navigation}) {
+export default function Step2({navigation}) {
   const [username, setUsername] = useState('');
+
   return (
     <UserView>
       <View>
-        <Image source={Images.signup} style={styles.loginImage}></Image>
+        <Text style={styles.stepText}>Step 2 of 3</Text>
+        <Image source={Images.step} style={styles.stepImage}></Image>
       </View>
 
       <View style={styles.box1}>
-        <Text style={styles.title}>Sign up</Text>
-        <Text style={styles.details}> Lets Create your account </Text>
-
-        {/* <InputGroup1 /> */}
-
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: 325,
-            marginTop: 30,
-          }}>
-          <View
-            style={{
-              padding: 10,
-              backgroundColor: '#2A4FD3',
-              borderTopLeftRadius: 8,
-              borderBottomLeftRadius: 8,
-            }}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontWeight: 'bold',
-                color: '#FFF',
-              }}>
-              +91
-            </Text>
-          </View>
-          <TextInput
-            style={{
-              flex: 1,
-              height: 40,
-              borderColor: '#2A4FD3',
-              borderWidth: 1,
-              borderTopRightRadius: 8,
-              borderBottomRightRadius: 8,
-              color: 'rgba(37, 38, 43, 0.75)',
-              textDecorationLine: 'none',
-              paddingHorizontal: 10,
-              letterSpacing: 1,
-            }}
-            underlineColorAndroid="transparent"
-            onChangeText={text => setUsername(text)}
-            value={username}
-            placeholder="Enter Mobile Number"
-            placeholderTextColor={' rgba(37, 38, 43, 0.75)'}
-            autoComplete="off"
-          />
-        </View>
-        <TouchableOpacity style={[styles.loginBtn, {marginTop: 30}]}>
-          <Text
-            // color="#F0EAD5"
-            style={{
-              fontSize: 16,
-              fontWeight: 600,
-              color: '#FFF',
-              textAlign: 'center',
-              paddingVertical: 10,
-              width: '100%',
-            }}
-            onPress={() => navigation.navigate('VerifyOtp')}>
-            {' '}
-            Get OTP
-          </Text>
-        </TouchableOpacity>
-
-        <View>
-          <Text
-            style={{
-              textAlign: 'center',
-              fontSize: 16,
-              fontWeight: 500,
-              marginTop: 10,
-            }}>
-            or Signup with
-          </Text>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              marginTop: 20,
-            }}>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Image style={styles.image} source={images.googleIcon} />
-              <Text style={styles.text}>Google</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Image style={styles.image} source={Images.facebookIcon} />
-              <Text style={styles.text}>Facebook</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
-
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text>
-            {' '}
-            Already have an account?{' '}
-            <Text style={{fontWeight: '700'}}> Login </Text>{' '}
-          </Text>
-        </TouchableOpacity>
+        <Form2 ></Form2> 
       </View>
     </UserView>
   );
 }
 
 const styles = StyleSheet.create({
+  stepText: {
+    fontFamily: Fonts.ubuntuBold,
+    fontStyle: 'normal',
+    fontWeight: 700,
+    fontSize: 24,
+    lineHeight: 30,
+    color: '#E9FAFF',
+    marginLeft: width * 0.08,
+  },
+  stepImage: {
+    width: width * 0.6,
+    height: height * 0.58,
+    resizeMode: 'contain',
+    marginLeft: width * 0.4,
+    marginTop: height * -0.15,
+  },
   loginImage: {
     width: width * 0.9,
     height: height * 0.58,
@@ -183,14 +100,14 @@ const styles = StyleSheet.create({
   },
   box1: {
     width: 350,
-    height: height * 0.41,
+    height: height * 0.63,
     backgroundColor: '#E9FAFF',
     borderRadius: 16,
     padding: 10,
     paddingBottom: 20,
     marginBottom: 30,
     marginLeft: 20,
-    marginTop: height * -0.12,
+    marginTop: height * -0.15,
   },
   title: {
     fontFamily: Fonts.ubuntuBold,
