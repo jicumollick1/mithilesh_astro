@@ -17,10 +17,9 @@ const UserView = ({children}) => {
 export default UserView;
 
 const styles = StyleSheet.create({
-  linearGradient: {
-    flex: 1,
-    // paddingHorizontal: responsiveWidth(4),
-    paddingTop: responsiveWidth(15),
-    borderRadius: 5,
-  },
+    linearGradient: {
+        flex: 1,
+        paddingTop: responsiveWidth(12),
+        borderRadius: 5,
+    },
 });

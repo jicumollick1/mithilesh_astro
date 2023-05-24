@@ -13,19 +13,18 @@ import TopNavigator from '../../components/user/TopNavigator';
 const Notifications = ({navigation}) => {
   return (
     <UserView>
-      <TopNavigator navigation={navigation} title="Notifications" />
-      <View>
+      <TopNavigator title="Notifications" />
+      <View style={[WhiteContainerStyles.container, {gap: responsiveWidth(2)}]}>
+        <Text style={{fontWeight: 'bold', fontSize: responsiveFontSize(3), color: Colors.black}}>Notifications</Text>
         <View style={{gap: responsiveWidth(2)}}>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              fontSize: responsiveFontSize(3),
-              color: Colors.black,
-            }}>
-            Notifications
-          </Text>
+          {
+              AllNotifications.map((item, index) => (
+                  <Notification key={index} title={item.title} image={item.image} time={item.time} />
+              ))
+          }
         </View>
-      </View>
+        <Button title="View More" buttonStyle={{backgroundColor: Colors.lightBlue, borderRadius: responsiveWidth(5), alignSelf: 'center', paddingHorizontal: responsiveWidth(5)}} titleStyle={{color: Colors.black}} />
+      </View> 
     </UserView>
   );
 };

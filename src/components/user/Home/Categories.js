@@ -8,18 +8,22 @@ const AllCategories = [
     {
         title: 'Kundli',
         logo: Images.Kundli,
+        screen: 'GenerateKundli',
     },
     {
         title: 'Panchang',
         logo: Images.Panchang,
+        screen: 'Panchang',
     },
     {
         title: 'Match Making',
         logo: Images.MatchMaking,
+        screen: 'MatchMaking',
     },
     {
         title: 'Wallet',
         logo: Images.Wallet,
+        screen: 'Home',
     },
     {
         title: 'Live Chat & Calls',
@@ -28,6 +32,7 @@ const AllCategories = [
     {
         title: 'Slot Bookings',
         logo: Images.SlotBookings,
+        screen: 'Home',
     },
 ];
 
@@ -38,7 +43,7 @@ const Categories = () => {
             <View style={{flexDirection: 'row', justifyContent: 'space-between', backgroundColor: Colors.darkBlue, borderRadius: responsiveWidth(2), padding: responsiveWidth(4), flexWrap: 'wrap', gap: responsiveWidth(5)}}>
                 {
                     AllCategories.map((item, index) => (
-                        <Category key={index} title={item.title} logo={item.logo} />
+                        <Category key={index} title={item.title} logo={item.logo} screen={item.screen} />
                     ))
                 }
             </View>

@@ -8,14 +8,17 @@ const AllCategories = [
     {
         title: 'Kundli',
         logo: Images.Kundli,
+        screen: 'Home',
     },
     {
         title: 'Panchang',
         logo: Images.Panchang,
+        screen: 'Home',
     },
     {
         title: 'Match Making',
         logo: Images.MatchMaking,
+        screen: 'Home',
     },
 ]
 
