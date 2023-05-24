@@ -15,14 +15,11 @@ const Navigators = () => {
     <Context.Provider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen
-            name={'OnboardingScreen'}
-            component={OnboardingScreen}
-          />
+          <Stack.Screen name={'User'} component={User} />
+          <Stack.Screen name={'OnboardingScreen'} component={OnboardingScreen} />
           <Stack.Screen name={'WelcomeScreen'} component={WelcomeScreen} />
           <Stack.Screen name={'Login'} component={Login} />
           <Stack.Screen name={'SignUp'} component={SignUp} />
-          <Stack.Screen name={'User'} component={User} />
         </Stack.Navigator>
       </NavigationContainer>
     </Context.Provider>

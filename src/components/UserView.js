@@ -16,8 +16,7 @@ export default UserView;
 const styles = StyleSheet.create({
     linearGradient: {
         flex: 1,
-        // paddingHorizontal: responsiveWidth(4),
-        paddingTop: responsiveWidth(15),
+        paddingTop: responsiveWidth(12),
         borderRadius: 5,
     },
 });

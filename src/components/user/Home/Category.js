@@ -1,15 +1,16 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { responsiveWidth } from 'react-native-responsive-dimensions';
 import { Colors } from '../../../constants';
 import { Image } from 'react-native-animatable';
-
-const Category = ({title, logo}) => {
+import { useNavigation } from '@react-navigation/native';
+const Category = ({title, logo, screen}) => {
+    const navigation = useNavigation();
     return(
-        <View style={{alignItems: 'center'}}>
+        <TouchableOpacity style={{alignItems: 'center'}} onPress={()=> navigation.navigate(screen)} >
             <Image source={logo} style={styles.image} />
             <Text style={{color: Colors.white}}>{title}</Text>
-        </View>
+        </TouchableOpacity>
     );
 };
 

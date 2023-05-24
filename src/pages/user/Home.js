@@ -15,12 +15,13 @@ import AllAstrologers from '../../components/user/Home/AllAstrologers';
 import RecommendedCategories from '../../components/user/Home/RecommendedCategories';
 import MatchMakingBanner from '../../components/user/Home/MatchMakingBanner';
 import WhiteContainerStyles from '../../styles/WhiteContainerStyles';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 const Home = ({navigation}) => {
   return (
     <UserView>
       <ScrollView>
-        <View style={{gap: responsiveWidth(10), paddingVertical: responsiveWidth(5)}}>
+        <View style={{flex: 1, gap: responsiveWidth(10), paddingVertical: responsiveWidth(5)}}>
           {/* navbar */}
           <TopNavigationBar />
           {/* banner */}
@@ -33,7 +34,8 @@ const Home = ({navigation}) => {
             <Image source={Images.HomeProfileAvatar} style={styles.homeAvatarImage} />
           </View>
 
-          <View style={WhiteContainerStyles.container}>
+          <View style={[WhiteContainerStyles.container, {gap: responsiveWidth(8), paddingVertical: responsiveWidth(3)}]}>
+            <Octicons name={'horizontal-rule'} size={responsiveFontSize(4)} style={{alignSelf: 'center', position: 'absolute'}} color={'#2A4FD3'} />
             <BookSlotBanner />
             <Categories />
             <SuggestedAstrologers />

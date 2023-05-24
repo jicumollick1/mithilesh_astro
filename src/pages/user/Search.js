@@ -36,7 +36,7 @@ const Search = ({navigation}) => {
           <TextInput placeholder="Search Astrologers, Categories" placeholderTextColor={Colors.black} style={{flex: 1}} value={searchText} onChangeText={setSearchText} />
         </View>
       </View>
-      <View style={WhiteContainerStyles.container}>
+      <View style={[WhiteContainerStyles.container, {gap: responsiveWidth(8)}]}>
         <View style={{gap: responsiveWidth(2)}}>
           <Text style={{fontWeight: 'bold', fontSize: responsiveFontSize(3), color: Colors.black}}>Specialization</Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', backgroundColor: Colors.darkBlue, borderRadius: responsiveWidth(2), padding: responsiveWidth(4), flexWrap: 'wrap', gap: responsiveWidth(5)}}>

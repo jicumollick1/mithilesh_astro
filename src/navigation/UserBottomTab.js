@@ -8,7 +8,7 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {t} from 'i18next';
-import {Icons} from '../constants';
+import {Colors, Icons} from '../constants';
 import Separator from '../components/Separator';
 import Home from '../pages/user/Home';
 import Phone from '../pages/user/Phone';
@@ -62,14 +62,14 @@ const UserBottomTab = ({navigation}) => {
                   style={{
                     height: responsiveWidth(5),
                     width: responsiveWidth(5),
-                    tintColor: focused ? 'blue' : '#fff',
+                    tintColor: focused ? Colors.darkBlue2 : Colors.black,
                   }}
                   source={focused ? activeIcon : inActiveIcon}
                 />
                 <Separator height={responsiveWidth(2)} />
                 <Text
                   style={{
-                    color: focused ? 'blue' : '#fff',
+                    color: focused ? Colors.darkBlue2 : Colors.black,
                     fontSize: responsiveFontSize(1.4),
                   }}>
                   {name}
