@@ -9,7 +9,7 @@ const UserView = ({children}) => {
     <LinearGradient
       colors={['#5FA5F6', '#FFE821']}
       style={styles.linearGradient}>
-      <ScrollView>{children}</ScrollView>
+      {children}
     </LinearGradient>
   );
 };

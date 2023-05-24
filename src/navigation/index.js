@@ -20,6 +20,7 @@ const Navigators = () => {
     <Context.Provider value={data}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name={'User'} component={User} />
           <Stack.Screen name={'OnboardingScreen'} component={OnboardingScreen} />
           <Stack.Screen name={'WelcomeScreen'} component={WelcomeScreen} />
           <Stack.Screen name={'Login'} component={Login} />
@@ -28,7 +29,6 @@ const Navigators = () => {
           <Stack.Screen name={'Step1'} component={Step1} />
           <Stack.Screen name={'Step2'} component={Step2} />
           <Stack.Screen name={'Step3'} component={Step3} />
-          <Stack.Screen name={'User'} component={User} />
         </Stack.Navigator>
       </NavigationContainer>
     </Context.Provider>
