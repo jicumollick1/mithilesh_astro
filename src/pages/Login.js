@@ -24,7 +24,7 @@ export default function Login({navigation}) {
   return (
     <UserView>
       <View>
-        <Image source={Images.login} style={styles.loginImage}></Image>
+        <Image source={Images.login} style={styles.loginImage} />
       </View>
 
       <View style={styles.box1}>
@@ -96,8 +96,12 @@ export default function Login({navigation}) {
       </View>
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity  onPress={()=> navigation.navigate('SignUp')} >
-          <Text> Don’t have an account? <Text style={{fontWeight: '700'}}> Sign up </Text> </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+          <Text>
+            {' '}
+            Don’t have an account?{' '}
+            <Text style={{fontWeight: '700'}}> Sign up </Text>{' '}
+          </Text>
         </TouchableOpacity>
       </View>
     </UserView>

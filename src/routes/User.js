@@ -18,14 +18,23 @@ import InCall from '../pages/user/InCall';
 import CallEnded from '../pages/user/CallEnded';
 import MyProfile from '../pages/user/MyProfile';
 import AccountSettings from '../pages/user/AccountSettings';
+import ListOfAstrologers from '../pages/user/ListOfAstrologers';
+import AstrologerDetails from '../pages/user/AstrologerDetails';
+import MoneyAdded from '../pages/user/MoneyAdded';
+import SlotBooked from '../pages/user/SlotBooked';
+import CallHistory from '../pages/user/CallHistory';
+import ChatHistory from '../pages/user/ChatHistory';
+import AllReviews from '../pages/user/AllReviews';
 
 const UserStack = createStackNavigator();
 
 const User = () => {
   return (
-    <UserStack.Navigator screenOptions={{headerShown: false}}>
+    <UserStack.Navigator
+      initialRouteName="AllReviews"
+      screenOptions={{headerShown: false}}>
       <UserStack.Screen name="UserDrawer" component={UserDrawer} />
-     
+
       <UserStack.Screen name="Home" component={Home} />
       <UserStack.Screen name="Search" component={Search} />
       <UserStack.Screen name="Notifications" component={Notifications} />
@@ -41,6 +50,13 @@ const User = () => {
       <UserStack.Screen name="CallEnded" component={CallEnded} />
       <UserStack.Screen name="MyProfile" component={MyProfile} />
       <UserStack.Screen name="AccountSettings" component={AccountSettings} />
+      <UserStack.Screen name="ListOfAstrologers" component={ListOfAstrologers} />
+      <UserStack.Screen name="AstrologerDetails" component={AstrologerDetails} />
+      <UserStack.Screen index name="MoneyAdded" component={MoneyAdded} />
+      <UserStack.Screen index name="SlotBooked" component={SlotBooked} />
+      <UserStack.Screen index name="CallHistory" component={CallHistory} />
+      <UserStack.Screen index name="ChatHistory" component={ChatHistory} />
+      <UserStack.Screen index name="AllReviews" component={AllReviews} />
     </UserStack.Navigator>
   );
 };

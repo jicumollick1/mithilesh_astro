@@ -1,7 +1,9 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Dimensions, Text, View} from 'react-native';
 import React from 'react';
 import {responsiveWidth} from 'react-native-responsive-dimensions';
 import { Colors } from '../constants';
+
+const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
     container: {

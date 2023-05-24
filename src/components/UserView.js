@@ -1,12 +1,15 @@
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import { responsiveWidth } from 'react-native-responsive-dimensions';
+import {responsiveWidth} from 'react-native-responsive-dimensions';
+import {ScrollView} from 'react-native';
 
 const UserView = ({children}) => {
   return (
-    <LinearGradient colors={['#5FA5F6', '#FFE821']} style={styles.linearGradient}>
-        {children}
+    <LinearGradient
+      colors={['#5FA5F6', '#FFE821']}
+      style={styles.linearGradient}>
+      <ScrollView>{children}</ScrollView>
     </LinearGradient>
   );
 };
