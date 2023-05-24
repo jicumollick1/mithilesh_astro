@@ -27,6 +27,8 @@ import ChatHistory from '../pages/user/ChatHistory';
 import AllReviews from '../pages/user/AllReviews';
 import ContactUs from '../pages/user/ContactUs';
 import Transactions from '../pages/user/Transactions';
+import AddMoney from '../pages/user/AddMoney';
+import SlotPayment from '../pages/user/SlotPayment';
 
 const UserStack = createStackNavigator();
 
@@ -61,6 +63,8 @@ const User = () => {
       <UserStack.Screen index name="CallHistory" component={CallHistory} />
       <UserStack.Screen index name="ChatHistory" component={ChatHistory} />
       <UserStack.Screen index name="AllReviews" component={AllReviews} />
+      <UserStack.Screen index name="AddMoney" component={AddMoney} />
+      <UserStack.Screen index name="SlotPayment" component={SlotPayment} />
     </UserStack.Navigator>
   );
 };
