@@ -25,13 +25,15 @@ import SlotBooked from '../pages/user/SlotBooked';
 import CallHistory from '../pages/user/CallHistory';
 import ChatHistory from '../pages/user/ChatHistory';
 import AllReviews from '../pages/user/AllReviews';
+import AddMoney from '../pages/user/AddMoney';
+import SlotPayment from '../pages/user/SlotPayment';
 
 const UserStack = createStackNavigator();
 
 const User = () => {
   return (
     <UserStack.Navigator
-      initialRouteName="Home"
+      initialRouteName="UserDrawer"
       screenOptions={{headerShown: false}}>
       <UserStack.Screen name="UserDrawer" component={UserDrawer} />
 
@@ -43,20 +45,31 @@ const User = () => {
       <UserStack.Screen name="Kundli" component={Kundli} />
       <UserStack.Screen name="MatchMaking" component={MatchMaking} />
       <UserStack.Screen name="MatchScore" component={MatchScore} />
-      <UserStack.Screen name="LiveChatsAndCalls" component={LiveChatsAndCalls} />
+      <UserStack.Screen
+        name="LiveChatsAndCalls"
+        component={LiveChatsAndCalls}
+      />
       <UserStack.Screen name="Chats" component={Chats} />
       <UserStack.Screen name="Calling" component={Calling} />
       <UserStack.Screen name="InCall" component={InCall} />
       <UserStack.Screen name="CallEnded" component={CallEnded} />
       <UserStack.Screen name="MyProfile" component={MyProfile} />
       <UserStack.Screen name="AccountSettings" component={AccountSettings} />
-      <UserStack.Screen name="ListOfAstrologers" component={ListOfAstrologers} />
-      <UserStack.Screen name="AstrologerDetails" component={AstrologerDetails} />
+      <UserStack.Screen
+        name="ListOfAstrologers"
+        component={ListOfAstrologers}
+      />
+      <UserStack.Screen
+        name="AstrologerDetails"
+        component={AstrologerDetails}
+      />
       <UserStack.Screen index name="MoneyAdded" component={MoneyAdded} />
       <UserStack.Screen index name="SlotBooked" component={SlotBooked} />
       <UserStack.Screen index name="CallHistory" component={CallHistory} />
       <UserStack.Screen index name="ChatHistory" component={ChatHistory} />
       <UserStack.Screen index name="AllReviews" component={AllReviews} />
+      <UserStack.Screen index name="AddMoney" component={AddMoney} />
+      <UserStack.Screen index name="SlotPayment" component={SlotPayment} />
     </UserStack.Navigator>
   );
 };

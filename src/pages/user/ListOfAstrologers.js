@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import React from 'react';
 import {UserView} from '../../components';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
@@ -33,46 +33,51 @@ const ListOfAstrologers = ({navigation}) => {
   const [searchText, setSearchText] = React.useState('');
   return (
     <UserView>
-      <View
-        style={{
-          flexDirection: 'row',
-          gap: responsiveWidth(5),
-          alignItems: 'center',
-          padding: responsiveWidth(5),
-        }}>
-        <FontAwesomeIcons
-          name="long-arrow-left"
-          size={40}
-          color={Colors.white}
-          onPress={() => navigation.goBack()}
-        />
-        <View style={styles.searchContainer}>
-          <FontAwesomeIcons name="search" size={20} color={Colors.darkBlue2} />
-          <TextInput
-            placeholder="Search Astrologers, Categories"
-            placeholderTextColor={Colors.black}
-            style={{flex: 1}}
-            value={searchText}
-            onChangeText={setSearchText}
+      <ScrollView>
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: responsiveWidth(5),
+            alignItems: 'center',
+            padding: responsiveWidth(5),
+          }}>
+          <FontAwesomeIcons
+            name="long-arrow-left"
+            size={40}
+            color={Colors.white}
+            onPress={() => navigation.goBack()}
           />
-        </View>
-      </View>
-      <View style={WhiteContainerStyles.container}>
-        <View style={{gap: responsiveWidth(2)}}>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              fontSize: responsiveFontSize(3),
-              color: Colors.black,
-            }}>
-            Search Results
-          </Text>
-          <View>
-            <AllAstrologers></AllAstrologers>
+          <View style={styles.searchContainer}>
+            <FontAwesomeIcons
+              name="search"
+              size={20}
+              color={Colors.darkBlue2}
+            />
+            <TextInput
+              placeholder="Search Astrologers, Categories"
+              placeholderTextColor={Colors.black}
+              style={{flex: 1}}
+              value={searchText}
+              onChangeText={setSearchText}
+            />
           </View>
         </View>
-        
-      </View>
+        <View style={WhiteContainerStyles.container}>
+          <View style={{gap: responsiveWidth(2)}}>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                fontSize: responsiveFontSize(3),
+                color: Colors.black,
+              }}>
+              Search Results
+            </Text>
+            <View>
+              <AllAstrologers></AllAstrologers>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     </UserView>
   );
 };

@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import React from 'react';
 // import {UserView} from '../../components';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
@@ -31,29 +31,29 @@ const AllReviews = ({navigation, route}) => {
   return (
     <UserView>
       <TopNavigator navigation={navigation} title="All Reviews" />
+      <ScrollView>
+        <View style={WhiteContainerStyles.container}>
+          <View style={{gap: responsiveWidth(2)}}>
+            <View>
+              <Text
+                style={{
+                  fontWeight: 600,
+                  fontSize: responsiveFontSize(3),
+                  color: Colors.black,
+                  lineHeight: 35,
+                }}>
+                All reviews
+              </Text>
 
-      <View style={WhiteContainerStyles.container}>
-        <View style={{gap: responsiveWidth(2)}}>
-          <View>
-            <Text
-              style={{
-                fontWeight: 600,
-                fontSize: responsiveFontSize(3),
-                color: Colors.black,
-                lineHeight: 35,
-              }}>
-              All reviews
-            </Text>
-
-            {/* Reviews Card  */}
-
+              {/* Reviews Card  */}
+            </View>
+            <ReviewsCard></ReviewsCard>
+            <ReviewsCard></ReviewsCard>
+            <ReviewsCard></ReviewsCard>
+            <ReviewsCard></ReviewsCard>
           </View>
-            <ReviewsCard></ReviewsCard>
-            <ReviewsCard></ReviewsCard>
-            <ReviewsCard></ReviewsCard>
-            <ReviewsCard></ReviewsCard>
         </View>
-      </View>
+      </ScrollView>
     </UserView>
   );
 };

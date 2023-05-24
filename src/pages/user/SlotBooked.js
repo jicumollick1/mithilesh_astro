@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import React from 'react';
 // import {UserView} from '../../components';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
@@ -30,86 +30,88 @@ const SlotBooked = ({navigation, route}) => {
     <UserView>
       <TopNavigator navigation={navigation} title="Slot Booked" />
 
-      <View style={WhiteContainerStyles.container}>
-        <View style={{gap: responsiveWidth(2)}}>
-          <Text
-            style={{
-              fontWeight: 600,
-              fontSize: responsiveFontSize(3),
-              color: Colors.black,
-              textAlign: 'center',
-              lineHeight: 35,
-            }}>
-            Money succesfully paid from your wallet
-          </Text>
-
-          {/* green Box  */}
-
-          <View style={styles.greenBox}>
-            <View>
-              <Icon
-                name="checkmark-circle-outline"
-                size={63}
-                color={'#fff'}
-                style={{marginBottom: 10, textAlign: 'center'}}></Icon>
-              <Text style={styles.boldPrice}> ₹ 300.00</Text>
-            </View>
-          </View>
-
-          <View>
+      <ScrollView >
+        <View style={[WhiteContainerStyles.container, {paddingBottom : 30}]}>
+          <View style={{gap: responsiveWidth(2)}}>
             <Text
               style={{
                 fontWeight: 600,
                 fontSize: responsiveFontSize(3),
                 color: Colors.black,
-                lineHeight: 35,
-                marginTop: 10,
-              }}>
-              Available Balance
-            </Text>
-
-            {/* blueBox  */}
-            <View style={styles.blueBox}>
-              <Text style={styles.boldPrice}> ₹ 1050.00</Text>
-              <Icon
-                name="wallet"
-                size={43}
-                color={'#FFFC48'}
-                style={{marginBottom: 10, textAlign: 'center'}}></Icon>
-            </View>
-          </View>
-          <View>
-            <Text
-              style={{
-                fontWeight: 600,
-                fontSize: responsiveFontSize(3),
-                color: Colors.black,
+                textAlign: 'center',
                 lineHeight: 35,
               }}>
-              Booked Details
+              Money succesfully paid from your wallet
             </Text>
 
-            {/* Call Card  */}
-            <View style={styles.callCard}>
+            {/* green Box  */}
+
+            <View style={styles.greenBox}>
               <View>
-                <Text style={styles.title}>Audio call with Shivam Ji</Text>
-                <Text style={styles.description}>
-                  2 hrs 14 mins 25 secs left
-                </Text>
-              </View>
-
-              <View style={styles.bottomContainer}>
-                <Image
-                  style={styles.personsImage}
-                  source={Images.callPersons}
-                />
-                <Text style={styles.time}>09:30 AM - 10:30 AM</Text>
+                <Icon
+                  name="checkmark-circle-outline"
+                  size={63}
+                  color={'#fff'}
+                  style={{marginBottom: 10, textAlign: 'center'}}></Icon>
+                <Text style={styles.boldPrice}> ₹ 300.00</Text>
               </View>
             </View>
+
+            <View>
+              <Text
+                style={{
+                  fontWeight: 600,
+                  fontSize: responsiveFontSize(3),
+                  color: Colors.black,
+                  lineHeight: 35,
+                  marginTop: 10,
+                }}>
+                Available Balance
+              </Text>
+
+              {/* blueBox  */}
+              <View style={styles.blueBox}>
+                <Text style={styles.boldPrice}> ₹ 1050.00</Text>
+                <Icon
+                  name="wallet"
+                  size={43}
+                  color={'#FFFC48'}
+                  style={{marginBottom: 10, textAlign: 'center'}}></Icon>
+              </View>
+            </View>
+            <View>
+              <Text
+                style={{
+                  fontWeight: 600,
+                  fontSize: responsiveFontSize(3),
+                  color: Colors.black,
+                  lineHeight: 35,
+                }}>
+                Booked Details
+              </Text>
+
+              {/* Call Card  */}
+              <View style={styles.callCard}>
+                <View>
+                  <Text style={styles.title}>Audio call with Shivam Ji</Text>
+                  <Text style={styles.description}>
+                    2 hrs 14 mins 25 secs left
+                  </Text>
+                </View>
+
+                <View style={styles.bottomContainer}>
+                  <Image
+                    style={styles.personsImage}
+                    source={Images.callPersons}
+                  />
+                  <Text style={styles.time}>09:30 AM - 10:30 AM</Text>
+                </View>
+              </View>
+            </View>
+            <BlueButton title={'Call Shivam ji'}></BlueButton>
           </View>
-          <BlueButton title={'Call Shivam ji'}></BlueButton>
         </View>
-      </View>
+      </ScrollView>
     </UserView>
   );
 };

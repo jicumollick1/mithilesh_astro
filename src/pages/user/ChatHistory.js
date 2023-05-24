@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import React from 'react';
 // import {UserView} from '../../components';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
@@ -31,30 +31,31 @@ const ChatHistory = ({navigation, route}) => {
   return (
     <UserView>
       <TopNavigator navigation={navigation} title="Chat History" />
+      <ScrollView>
+        <View style={WhiteContainerStyles.container}>
+          <View style={{gap: responsiveWidth(2)}}>
+            <View>
+              <Text
+                style={{
+                  fontWeight: 600,
+                  fontSize: responsiveFontSize(3),
+                  color: Colors.black,
+                  lineHeight: 35,
+                }}>
+                Chat History
+              </Text>
 
-      <View style={WhiteContainerStyles.container}>
-        <View style={{gap: responsiveWidth(2)}}>
-          <View>
-            <Text
-              style={{
-                fontWeight: 600,
-                fontSize: responsiveFontSize(3),
-                color: Colors.black,
-                lineHeight: 35,
-              }}>
-              Chat History
-            </Text>
+              {/* Call Card  */}
 
-            {/* Call Card  */}
-
-            <ChatCard></ChatCard>
-            <ChatCard></ChatCard>
-            <ChatCard></ChatCard>
-            <ChatCard></ChatCard>
-            <ChatCard></ChatCard>
+              <ChatCard></ChatCard>
+              <ChatCard></ChatCard>
+              <ChatCard></ChatCard>
+              <ChatCard></ChatCard>
+              <ChatCard></ChatCard>
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </UserView>
   );
 };
