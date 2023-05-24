@@ -19,65 +19,25 @@ import UserView from '../components/UserView';
 import {Fonts, Images} from '../constants';
 import {useState} from 'react';
 import images from '../constants/images';
+import OTPInput from '../components/reusable/OTPInput';
 
-export default function SignUp({navigation}) {
+export default function VerifyOtp({navigation}) {
   const [username, setUsername] = useState('');
   return (
     <UserView>
       <View>
-        <Image source={Images.signup} style={styles.loginImage}></Image>
+        <Image source={Images.otp} style={styles.loginImage}></Image>
       </View>
 
       <View style={styles.box1}>
-        <Text style={styles.title}>Sign up</Text>
-        <Text style={styles.details}> Lets Create your account </Text>
+        <Text style={styles.title}>Enter OTP</Text>
+        <Text style={styles.details}>
+          {' '}
+          A 4 digit code has been sent to your registered number{' '}
+        </Text>
+        <Text style={[styles.details, {}]}>+91-*******874</Text>
 
-        {/* <InputGroup1 /> */}
-
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: 325,
-            marginTop: 30,
-          }}>
-          <View
-            style={{
-              padding: 10,
-              backgroundColor: '#2A4FD3',
-              borderTopLeftRadius: 8,
-              borderBottomLeftRadius: 8,
-            }}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontWeight: 'bold',
-                color: '#FFF',
-              }}>
-              +91
-            </Text>
-          </View>
-          <TextInput
-            style={{
-              flex: 1,
-              height: 40,
-              borderColor: '#2A4FD3',
-              borderWidth: 1,
-              borderTopRightRadius: 8,
-              borderBottomRightRadius: 8,
-              color: 'rgba(37, 38, 43, 0.75)',
-              textDecorationLine: 'none',
-              paddingHorizontal: 10,
-              letterSpacing: 1,
-            }}
-            underlineColorAndroid="transparent"
-            onChangeText={text => setUsername(text)}
-            value={username}
-            placeholder="Enter Mobile Number"
-            placeholderTextColor={' rgba(37, 38, 43, 0.75)'}
-            autoComplete="off"
-          />
-        </View>
+        <OTPInput />
         <TouchableOpacity style={[styles.loginBtn, {marginTop: 30}]}>
           <Text
             // color="#F0EAD5"
@@ -89,47 +49,17 @@ export default function SignUp({navigation}) {
               paddingVertical: 10,
               width: '100%',
             }}
-            onPress={() => navigation.navigate('VerifyOtp')}>
+            onPress={() => navigation.navigate('Step1')}>
             {' '}
-            Get OTP
+            Confirm OTP
           </Text>
         </TouchableOpacity>
-
-        <View>
-          <Text
-            style={{
-              textAlign: 'center',
-              fontSize: 16,
-              fontWeight: 500,
-              marginTop: 10,
-            }}>
-            or Signup with
-          </Text>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              marginTop: 20,
-            }}>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Image style={styles.image} source={images.googleIcon} />
-              <Text style={styles.text}>Google</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Image style={styles.image} source={Images.facebookIcon} />
-              <Text style={styles.text}>Facebook</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
       </View>
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <TouchableOpacity>
           <Text>
-            {' '}
-            Already have an account?{' '}
-            <Text style={{fontWeight: '700'}}> Login </Text>{' '}
+            <Text style={{fontWeight: '700'}}> Resend OTP </Text>{' '}
           </Text>
         </TouchableOpacity>
       </View>

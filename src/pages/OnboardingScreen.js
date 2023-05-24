@@ -88,6 +88,7 @@ const OnboardingScreen = ({navigation}) => {
           renderItem={({item}) => (
             <WelcomeCard
               {...item}
+              key={item.title}
               list={welcomeList}
               index={welcomeListIndex}
             />
@@ -148,7 +149,6 @@ const styles = StyleSheet.create({
     marginHorizontal: responsiveWidth(1.3),
   },
   getBtn: {
-    
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: responsiveWidth(0.3),
