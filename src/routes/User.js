@@ -31,7 +31,7 @@ const UserStack = createStackNavigator();
 const User = () => {
   return (
     <UserStack.Navigator
-      initialRouteName="AllReviews"
+      initialRouteName="Home"
       screenOptions={{headerShown: false}}>
       <UserStack.Screen name="UserDrawer" component={UserDrawer} />
 
