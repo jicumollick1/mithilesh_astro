@@ -11,7 +11,7 @@ import FeatherIcons from 'react-native-vector-icons/Feather';
 import AntDesignIcons from 'react-native-vector-icons/AntDesign';
 import Octicons from 'react-native-vector-icons/Octicons';
 
-const AccountSettings = () => {
+const AccountSettings = ({navigation}) => {
     const [notifications, setNotifications] = useState(true);
     const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -30,7 +30,7 @@ const AccountSettings = () => {
                 </View>
                 <View style={{gap: responsiveWidth(2)}}>
                     <Text style={{fontWeight: 'bold', fontSize: responsiveFontSize(2.5), color: Colors.black}}>Support</Text>
-                    <Button title="Contact Us" buttonStyle={{backgroundColor: Colors.darkBlue2, gap: responsiveWidth(5)}} icon={<FeatherIcons name="phone-call" size={responsiveFontSize(2.5)} color={Colors.white} />} />
+                    <Button title="Contact Us" buttonStyle={{backgroundColor: Colors.darkBlue2, gap: responsiveWidth(5)}} icon={<FeatherIcons name="phone-call" size={responsiveFontSize(2.5)} color={Colors.white} />} onPress={()=> navigation.navigate('ContactUs')} />
                 </View>
                 <View style={{gap: responsiveWidth(5)}}>
                     <Text style={{fontWeight: 'bold', fontSize: responsiveFontSize(2.5), color: Colors.black}}>Account Information</Text>

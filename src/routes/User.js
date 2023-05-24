@@ -25,13 +25,15 @@ import SlotBooked from '../pages/user/SlotBooked';
 import CallHistory from '../pages/user/CallHistory';
 import ChatHistory from '../pages/user/ChatHistory';
 import AllReviews from '../pages/user/AllReviews';
+import ContactUs from '../pages/user/ContactUs';
+import Transactions from '../pages/user/Transactions';
 
 const UserStack = createStackNavigator();
 
 const User = () => {
   return (
     <UserStack.Navigator
-      initialRouteName="Home"
+      initialRouteName="UserDrawer"
       screenOptions={{headerShown: false}}>
       <UserStack.Screen name="UserDrawer" component={UserDrawer} />
 
@@ -50,6 +52,8 @@ const User = () => {
       <UserStack.Screen name="CallEnded" component={CallEnded} />
       <UserStack.Screen name="MyProfile" component={MyProfile} />
       <UserStack.Screen name="AccountSettings" component={AccountSettings} />
+      <UserStack.Screen name="ContactUs" component={ContactUs} />
+      <UserStack.Screen name="Transactions" component={Transactions} />
       <UserStack.Screen name="ListOfAstrologers" component={ListOfAstrologers} />
       <UserStack.Screen name="AstrologerDetails" component={AstrologerDetails} />
       <UserStack.Screen index name="MoneyAdded" component={MoneyAdded} />
