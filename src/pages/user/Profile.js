@@ -10,6 +10,7 @@ import FeatherIcons from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import LogoutModal from './LogoutModal';
 
 const Profile = ({navigation}) => {
   return (
@@ -43,7 +44,7 @@ const Profile = ({navigation}) => {
           </View>
           <View style={[WhiteContainerStyles.container, {gap: responsiveWidth(20), paddingVertical: responsiveWidth(3)}]}>
             <Button title="Account Settings" buttonStyle={{backgroundColor: Colors.darkBlue2, borderRadius: responsiveWidth(2), gap: responsiveWidth(5), justifyContent: 'flex-start', paddingHorizontal: responsiveWidth(5)}} titleStyle={{fontFamily: Fonts.ubuntuBold, fontSize: responsiveFontSize(2)}} icon={<Ionicons name="settings-sharp" size={responsiveFontSize(3)} color={Colors.white} />} onPress={()=> navigation.navigate('AccountSettings')} />
-            <Button title="Logout" buttonStyle={{backgroundColor: '#AF2F2F', borderRadius: responsiveWidth(2), gap: responsiveWidth(5)}} titleStyle={{fontFamily: Fonts.ubuntuBold, fontSize: responsiveFontSize(2)}} icon={LogoutIcon} />
+            <LogoutModal />
           </View>
       </View>
     </UserView>
@@ -51,14 +52,6 @@ const Profile = ({navigation}) => {
 };
 
 export default Profile;
-
-const LogoutIcon = () => {
-  return(
-    <View style={{backgroundColor: Colors.Yellow, padding: responsiveWidth(1.5), borderRadius: responsiveWidth(50)}}>
-      <MaterialIcons name="logout" size={responsiveFontSize(2.5)} color={Colors.darkBlue2} />
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   image: {
