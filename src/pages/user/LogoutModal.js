@@ -18,7 +18,7 @@ const LogoutModal = () => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Are you sure that you want to call us</Text>
+            <Text style={styles.modalText}>Are you sure that you want to Logout</Text>
             <View style={{flexDirection: 'row', justifyContent: 'space-between', gap: responsiveWidth(4)}}>
                 <Pressable
                     style={[styles.button, styles.buttonClose]}
