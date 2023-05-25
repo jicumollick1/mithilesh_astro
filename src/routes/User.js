@@ -11,7 +11,6 @@ import Kundli from '../pages/user/Kundli';
 import Panchang from '../pages/user/Panchang';
 import MatchMaking from '../pages/user/MatchMaking';
 import MatchScore from '../pages/user/MatchScore';
-import LiveChatsAndCalls from '../pages/user/LiveChatsAndCalls';
 import Chats from '../pages/user/Chats';
 import Calling from '../pages/user/Calling';
 import InCall from '../pages/user/InCall';
@@ -47,7 +46,6 @@ const User = () => {
       <UserStack.Screen name="Kundli" component={Kundli} />
       <UserStack.Screen name="MatchMaking" component={MatchMaking} />
       <UserStack.Screen name="MatchScore" component={MatchScore} />
-      <UserStack.Screen name="LiveChatsAndCalls" component={LiveChatsAndCalls} />
       <UserStack.Screen name="Chats" component={Chats} />
       <UserStack.Screen name="Calling" component={Calling} />
       <UserStack.Screen name="InCall" component={InCall} />

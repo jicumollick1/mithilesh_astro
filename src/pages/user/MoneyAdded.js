@@ -78,7 +78,7 @@ const MoneyAdded = ({navigation, route}) => {
                   style={{marginBottom: 10, textAlign: 'center'}}></Icon>
               </View>
 
-              <BlueButton title={'Pay from your wallet'}></BlueButton>
+              <BlueButton title={'Pay from your wallet'} navigate={'SlotBooked'} ></BlueButton>
             </View>
           </View>
           </ScrollView>

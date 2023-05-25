@@ -7,10 +7,12 @@ import {
 } from 'react-native';
 import React from 'react';
 import {Fonts} from '../../constants';
+import { useNavigation } from '@react-navigation/native';
 const {width, height} = Dimensions.get('window');
-const BlueButton = ({title}) => {
+const BlueButton = ({title, navigate}) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.blueButton}>
+    <TouchableOpacity style={styles.blueButton} onPress={()=> navigation.navigate(navigate)} >
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );

@@ -13,7 +13,7 @@ import AllTransactions from '../../components/user/Transactions/AllTransactions'
 const Wallet = ({navigation}) => {
   return (
     <UserView>
-      <TopNavigator title={'Wallet'} />
+      <Text style={{fontWeight: 'bold', fontSize: responsiveFontSize(3), color: Colors.white, padding: responsiveWidth(5), textAlign: 'center'}}>Wallet</Text>
       <ScrollView>
         <View style={{backgroundColor: Colors.darkBlue2, padding: responsiveWidth(4), margin: responsiveWidth(5), borderRadius: responsiveWidth(2), gap: responsiveWidth(5)}}>
           <View style={{backgroundColor: Colors.Yellow, padding: responsiveWidth(3), borderRadius: responsiveWidth(2), gap: responsiveWidth(3)}}>
@@ -42,7 +42,7 @@ const Wallet = ({navigation}) => {
                   <AddonButton price={500} />
                   <AddonButton price={1000} />
                 </View>
-                <Button buttonStyle={{backgroundColor: Colors.Yellow, borderRadius: responsiveWidth(2)}} titleStyle={{color: Colors.black, fontSize: responsiveFontSize(2), fontWeight: 'bold'}} >Proceed to add {<FontAwesomeIcons name={'rupee'} size={20} color={Colors.black} ></FontAwesomeIcons>} 1000</Button>
+                <Button buttonStyle={{backgroundColor: Colors.Yellow, borderRadius: responsiveWidth(2)}} titleStyle={{color: Colors.black, fontSize: responsiveFontSize(2), fontWeight: 'bold'}} onPress={()=> navigation.navigate('AddMoney')} >Proceed to add {<FontAwesomeIcons name={'rupee'} size={20} color={Colors.black} ></FontAwesomeIcons>} 1000</Button>
               </View>
             </View>
           </View>

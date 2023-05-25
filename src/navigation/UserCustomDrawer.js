@@ -46,7 +46,7 @@ function UserCustomDrawer({navigation, props}) {
         <View style={styles.headerContainer}>
           <Image source={Images.Person1} style={styles.image} />
           <Text style={styles.name}>Vijay Kumar</Text>
-          <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', gap: responsiveWidth(2), backgroundColor: Colors.white, padding: responsiveWidth(1)}}>
+          <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', gap: responsiveWidth(2), backgroundColor: Colors.white, padding: responsiveWidth(1)}} onPress={()=> navigation.navigate('Profile')} >
             <FeatherIcons name="edit-3" size={20} color={Colors.black} />
             <Text style={{color: Colors.black, fontSize: responsiveFontSize(2), fontWeight: 'bold'}}>Edit Profile</Text>
           </TouchableOpacity>

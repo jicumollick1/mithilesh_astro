@@ -25,7 +25,7 @@ const MatchScore = ({navigation}) => {
                             <Text style={{color: Colors.black, fontWeight: 'bold', fontSize: responsiveFontSize(2.5)}}>Score Obtained</Text>
                         </View>
                     </View>
-                    <Button title={'Consult With Astrologer'} buttonStyle={{backgroundColor: Colors.darkBlue2, borderRadius: responsiveWidth(1), alignSelf: 'center', paddingHorizontal: responsiveWidth(5)}} onPress={()=> navigation.navigate('LiveChatsAndCalls')} />
+                    <Button title={'Consult With Astrologer'} buttonStyle={{backgroundColor: Colors.darkBlue2, borderRadius: responsiveWidth(1), alignSelf: 'center', paddingHorizontal: responsiveWidth(5)}} onPress={()=> navigation.navigate('Phone')} />
                 </View>
                 <View style={[WhiteContainerStyles.container, {paddingHorizontal: responsiveWidth(2), paddingVertical: responsiveWidth(2), gap: responsiveWidth(5)}]}>
                     <View style={{backgroundColor: Colors.darkBlue2, borderRadius: responsiveWidth(1), paddingVertical: responsiveWidth(5)}}>
