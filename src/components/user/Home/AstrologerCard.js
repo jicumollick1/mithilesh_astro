@@ -160,7 +160,7 @@ const AstrologerCard = ({data, navigateTo, navigation}) => {
         </View>
         <View style={{flexDirection: 'row', gap: responsiveWidth(3)}}>
           <Button
-            title="Chat"
+            title="Call"
             buttonStyle={styles.btn}
             icon={
               <FeatherIcons
@@ -171,7 +171,7 @@ const AstrologerCard = ({data, navigateTo, navigation}) => {
             }
           />
           <Button
-            title="Call"
+            title="Chat"
             buttonStyle={styles.btn}
             icon={
               <MaterialIcons

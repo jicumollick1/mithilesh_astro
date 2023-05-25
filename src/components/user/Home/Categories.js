@@ -23,16 +23,17 @@ const AllCategories = [
     {
         title: 'Wallet',
         logo: Images.Wallet,
-        screen: 'Home',
+        screen: 'Wallet',
     },
     {
         title: 'Live Chat & Calls',
         logo: Images.LiveChatCalls,
+        screen: 'Phone',
     },
     {
         title: 'Slot Bookings',
         logo: Images.SlotBookings,
-        screen: 'Home',
+        screen: 'SlotPayment',
     },
 ];
 

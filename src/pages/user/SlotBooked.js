@@ -108,7 +108,7 @@ const SlotBooked = ({navigation, route}) => {
                 </View>
               </View>
             </View>
-            <BlueButton title={'Call Shivam ji'}></BlueButton>
+            <BlueButton title={'Call Shivam ji'} navigate={'Calling'} ></BlueButton>
           </View>
         </View>
       </ScrollView>
