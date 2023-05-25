@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 import React from 'react';
-import {Colors, Fonts, Images} from '../../constants';
+import {Colors, Fonts, Icons, Images} from '../../constants';
 const {width, height} = Dimensions.get('window');
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import {responsiveWidth} from 'react-native-responsive-dimensions';
@@ -11,11 +11,34 @@ const ReviewsCard = () => {
       <View style={styles.bottomContainer}>
         <View style={{flexDirection: 'row'}}>
           <Image style={styles.personsImage} source={Images.Person6} />
-          <View style={{marginLeft:10}}>
+          <View style={{marginLeft: 10}}>
             <Text style={styles.time}>Ravi</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={Icons.yellowStar}
+                style={{width: 10, height: 10, marginRight: 4}}
+              />
+              <Image
+                source={Icons.yellowStar}
+                style={{width: 10, height: 10, marginRight: 4}}
+              />
+              <Image
+                source={Icons.yellowStar}
+                style={{width: 10, height: 10, marginRight: 4}}
+              />
+              <Image
+                source={Icons.yellowStar}
+                style={{width: 10, height: 10, marginRight: 4}}
+              />
+            </View>
           </View>
         </View>
-        <View></View>
+        <View>
+          <Image
+            source={Icons.dot3}
+            style={{width: 10, height: 15, marginRight: 4}}
+          />
+        </View>
       </View>
       <View>
         <Text style={styles.description}>
@@ -57,7 +80,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: 0.02,
     color: '#393737',
-    marginTop: 10
+    marginTop: 10,
   },
   bottomContainer: {
     flexDirection: 'row',
