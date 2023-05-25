@@ -3,8 +3,8 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../pages/user/Home';
 import Search from '../pages/user/Search';
-import UserBottomTab from '../navigation/UserBottomTab';
-import UserDrawer from '../navigation/UserDrawer';
+import UserBottomTab from '../navigation/user/UserBottomTab';
+import UserDrawer from '../navigation/user/UserDrawer';
 import Notifications from '../pages/user/Notifications';
 import GenerateKundli from '../pages/user/GenerateKundli';
 import Kundli from '../pages/user/Kundli';
@@ -34,7 +34,7 @@ const UserStack = createStackNavigator();
 const User = () => {
   return (
     <UserStack.Navigator
-      initialRouteName="AllReviews"
+      initialRouteName="UserDrawer"
       screenOptions={{headerShown: false}}>
       <UserStack.Screen name="UserDrawer" component={UserDrawer} />
 

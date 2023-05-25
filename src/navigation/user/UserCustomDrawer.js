@@ -20,8 +20,8 @@ import {
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import OcticonsIcons from 'react-native-vector-icons/Octicons';
 
-import Separator from '../components/Separator';
-import { Colors, Icons, Images } from '../constants';
+import Separator from '../../components/Separator';
+import { Colors, Icons, Images } from '../../constants';
 
 function UserCustomDrawer({navigation, props}) {
   const [modalVisible, setModalVisible] = useState(false);

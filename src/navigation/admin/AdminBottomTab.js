@@ -8,14 +8,14 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {t} from 'i18next';
-import {Colors, Icons} from '../constants';
-import Separator from '../components/Separator';
-import Home from '../pages/user/Home';
-import Phone from '../pages/user/Phone';
-import Profile from '../pages/user/Profile';
-import Wallet from '../pages/user/Wallet';
+import {Colors, Icons} from '../../constants';
+import Separator from '../../components/Separator';
+import AdminHome from '../../pages/admin/AdminHome';
+import Chats from '../../pages/admin/Chats';
+import Profile from '../../pages/admin/Profile';
+import Earnings from '../../pages/admin/Earnings';
 const Tab = createBottomTabNavigator();
-const UserBottomTab = ({navigation}) => {
+const AdminBottomTab = ({navigation}) => {
   // animated tab indicator
   const tabOffsetValue = useRef(new Animated.Value(0)).current;
 
@@ -32,17 +32,17 @@ const UserBottomTab = ({navigation}) => {
           tabBarIcon: ({focused}) => {
             let activeIcon, inActiveIcon, name;
             if (route.name === 'Home') {
-              inActiveIcon = Icons.homeFilled;
+              inActiveIcon = Icons.homeEmpty;
               activeIcon = Icons.homeFilled;
               name = 'Home';
-            } else if (route.name === 'Phone') {
-              inActiveIcon = Icons.phone;
-              activeIcon = Icons.phone;
-              name = 'Phone';
-            } else if (route.name === 'Wallet') {
-              inActiveIcon = Icons.wallet;
-              activeIcon = Icons.wallet;
-              name = 'Wallet';
+            } else if (route.name === 'Live Chats') {
+              inActiveIcon = Icons.LiveChatsEmpty;
+              activeIcon = Icons.LiveChatsFilled;
+              name = 'Live Chats';
+            } else if (route.name === 'Earnings') {
+              inActiveIcon = Icons.walletEmpty;
+              activeIcon = Icons.walletFilled;
+              name = 'Earnings';
             } else if (route.name === 'Profile') {
               inActiveIcon = Icons.profile;
               activeIcon = Icons.profile;
@@ -54,7 +54,6 @@ const UserBottomTab = ({navigation}) => {
                   alignItems: 'center',
                   height: '100%',
                   justifyContent: 'center',
-                  alignItems: 'center',
                   width: getWidth(),
                   paddingTop: responsiveWidth(4),
                 }}>
@@ -100,7 +99,7 @@ const UserBottomTab = ({navigation}) => {
             },
           })}
           name="Home"
-          component={Home}
+          component={AdminHome}
         />
         <Tab.Screen
           listeners={({navigation, route}) => ({
@@ -111,8 +110,8 @@ const UserBottomTab = ({navigation}) => {
               }).start();
             },
           })}
-          name="Phone"
-          component={Phone}
+          name="Live Chats"
+          component={Chats}
         />
         <Tab.Screen
           listeners={({navigation, route}) => ({
@@ -123,8 +122,8 @@ const UserBottomTab = ({navigation}) => {
               }).start();
             },
           })}
-          name="Wallet"
-          component={Wallet}
+          name="Earnings"
+          component={Earnings}
         />
         <Tab.Screen
           listeners={({navigation, route}) => ({
@@ -155,4 +154,4 @@ const UserBottomTab = ({navigation}) => {
   );
 };
 
-export default UserBottomTab;
+export default AdminBottomTab;
