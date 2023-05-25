@@ -62,7 +62,6 @@ const Astrologers = [
     badge: 'Top Rated',
   },
 ];
-
 const AllAstrologers = () => {
   const [active, setActive] = React.useState('All');
   const navigation = useNavigation();

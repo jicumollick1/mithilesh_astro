@@ -11,10 +11,11 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import { Button } from 'react-native-elements';
 
+
 const MyProfile = () => {
     return (
         <UserView>
-            <TopNavigator title={'My Profile'} />
+            <TopNavigator title={'My Profile'} />            
             <View style={{flex: 1, gap: responsiveWidth(5)}}>
                 <View style={{paddingHorizontal: responsiveWidth(5)}}>
                     <Text style={{color: Colors.white, fontWeight: 'bold', fontSize: responsiveFontSize(2.5)}}>Provide birth information</Text>

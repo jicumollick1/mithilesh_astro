@@ -31,10 +31,9 @@ const UserStack = createStackNavigator();
 const User = () => {
   return (
     <UserStack.Navigator
-      initialRouteName="Home"
+      initialRouteName="UserDrawer"
       screenOptions={{headerShown: false}}>
       <UserStack.Screen name="UserDrawer" component={UserDrawer} />
-
       <UserStack.Screen name="Home" component={Home} />
       <UserStack.Screen name="Search" component={Search} />
       <UserStack.Screen name="Notifications" component={Notifications} />

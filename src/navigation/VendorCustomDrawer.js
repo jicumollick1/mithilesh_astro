@@ -22,8 +22,9 @@ import OcticonsIcons from 'react-native-vector-icons/Octicons';
 
 import Separator from '../components/Separator';
 import { Colors, Icons, Images } from '../constants';
+import FocusStatusBar from '../components/FocusStatusBar';
 
-function UserCustomDrawer({navigation, props}) {
+function VendorCustomDrawer({navigation, props}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -33,17 +34,17 @@ function UserCustomDrawer({navigation, props}) {
       <View
         style={{
           flex: 1,
-          backgroundColor: "#fff",
+          backgroundColor: Colors.primary,
         }}>
-        <SafeAreaView/>        
-          <StatusBar
-            barStyle={'dark-content'}
-            backgroundColor={'skyblue'}
-            translucent
-          />
+        <SafeAreaView/>
+        <FocusStatusBar
+        barStyle={'light-content'}
+        backgroundColor={Colors.primary}
+        translucent
+      />
         <Separator height={StatusBar.currentHeight} />        
         <View style={styles.headerContainer}>
-          <Image source={Images.Person1} style={styles.image} />
+          <Image source={Images.Person4} style={styles.image} />
           <Text style={styles.name}>Vijay Kumar</Text>
           <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center', gap: responsiveWidth(2), backgroundColor: Colors.white, padding: responsiveWidth(1)}}>
             <FeatherIcons name="edit-3" size={20} color={Colors.black} />
@@ -56,8 +57,7 @@ function UserCustomDrawer({navigation, props}) {
         <ScrollView contentContainerStyle={styles.bottomContainer}>
           <View style={{gap: responsiveWidth(4)}}>
             <Item title="Home" logo={Icons.home} />
-            <Item title="Wallet" logo={Icons.walletCircle} />
-            <Item title="Slot Bookings" logo={Icons.SlotBooking} />
+            <Item title="Wallet" logo={Icons.walletCircle} />            
             <Item title="Call History" logo={Icons.CallHistory} />
             <Item title="Chat History" logo={Icons.ChatHistory} />
             <Separator height={responsiveWidth(5)} />
@@ -100,12 +100,12 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignItems: 'center',
     paddingTop: responsiveHeight(6),
-    backgroundColor: Colors.Yellow,
+    backgroundColor: Colors.primary,
     paddingBottom: responsiveHeight(3),
     gap: responsiveWidth(2),
   },
   name: {
-    color: Colors.black,
+    color: Colors.white,
     fontSize: responsiveFontSize(3),
     fontWeight: 'bold',
   },
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     flex: 1,
-    backgroundColor: Colors.darkBlue2,
+    backgroundColor: Colors.black,
     padding: responsiveWidth(5),
   },
   itemLogo: {
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserCustomDrawer;
+export default VendorCustomDrawer;
