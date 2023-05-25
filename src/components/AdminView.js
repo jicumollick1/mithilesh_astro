@@ -3,7 +3,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {responsiveWidth} from 'react-native-responsive-dimensions';
 
-const UserView = ({children}) => {
+const AdminView = ({children}) => {
   return (
     <LinearGradient
       colors={['#5FA5F6', '#FFE821']}
@@ -13,7 +13,7 @@ const UserView = ({children}) => {
   );
 };
 
-export default UserView;
+export default AdminView;
 
 const styles = StyleSheet.create({
     linearGradient: {
