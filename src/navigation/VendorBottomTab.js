@@ -36,16 +36,16 @@ const VendorBottomTab = ({navigation}) => {
           tabBarIcon: ({focused}) => {
             let activeIcon, inActiveIcon, name;
             if (route.name === 'Home') {
-              inActiveIcon = Icons.homeFilled;
+              inActiveIcon = Icons.homeEmpty;
               activeIcon = Icons.homeFilled;
               name = 'Home';
              } else if (route.name === 'LiveChatCalls') {
-              inActiveIcon = Icons.vChat;
-              activeIcon = Icons.vChat;
+              inActiveIcon = Icons.LiveChatsEmpty;
+              activeIcon = Icons.LiveChatsFilled;
               name = 'Live Chats';
             } else if (route.name === 'Wallet') {
-                inActiveIcon = Icons.vCall;
-                activeIcon = Icons.vCall;
+              inActiveIcon = Icons.phoneEmpty;
+              activeIcon = Icons.phoneFilled;
                 name = 'Live Calls';
             } else if (route.name === 'Profile') {
               inActiveIcon = Icons.profile;
