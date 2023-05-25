@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import { responsiveFontSize, responsiveWidth } from 'react-native-responsive-dimensions';
-import { Images } from '../../constants';
+import { Colors, Images } from '../../constants';
 import { UserView } from '../../components';
 import TopNavigationBar from '../../components/user/Home/TopNavigationBar';
 import BookSlotBanner from '../../components/user/Home/BookSlotBanner';
@@ -35,7 +35,7 @@ const Home = ({navigation}) => {
           </View>
 
           <View style={[WhiteContainerStyles.container, {gap: responsiveWidth(8), paddingVertical: responsiveWidth(3)}]}>
-            <Octicons name={'horizontal-rule'} size={responsiveFontSize(4)} style={{alignSelf: 'center', position: 'absolute'}} color={'#2A4FD3'} />
+            <Octicons name={'horizontal-rule'} size={responsiveFontSize(4)} style={{alignSelf: 'center', position: 'absolute'}} color={Colors.darkBlue2} />
             <BookSlotBanner />
             <Categories />
             <SuggestedAstrologers />
