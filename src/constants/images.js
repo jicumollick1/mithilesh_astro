@@ -54,4 +54,12 @@ export default {
   insufficient: require('../assets/images/insufficient.png'),
   TotalDownloadsGraph: require('../assets/images/TotalDownloadsGraph.png'),
   ConsultationsGraph: require('../assets/images/ConsultationsGraph.png'),
+  VKundli: require('../assets/images/VKundli.png'),
+  VPanchang: require('../assets/images/VPanchang.png'),
+  VMatchMaking: require('../assets/images/VMatchMaking.png'),
+  VWallet: require('../assets/images/VWallet.png'),
+  VLiveChatCalls: require('../assets/images/VLiveChat&Calls.png'),
+  VindianWedding: require('../assets/images/VindianWedding.png'),
+  VkundliChart: require('../assets/images/VkundliChart.png'),
+  VSlotBookings: require('../assets/images/VSlotBookings.png'),
 };

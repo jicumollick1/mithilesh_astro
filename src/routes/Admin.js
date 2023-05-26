@@ -13,7 +13,7 @@ const AdminStack = createStackNavigator();
 const Admin = () => {
   return (
     <AdminStack.Navigator
-      initialRouteName="CallHistory"
+      initialRouteName="AdminDrawer"
       screenOptions={{headerShown: false}}>
       <AdminStack.Screen name="AdminDrawer" component={AdminDrawer} />
 
