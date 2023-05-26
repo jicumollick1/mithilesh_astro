@@ -52,4 +52,6 @@ export default {
   step: require('../assets/images/step.png'),
   callPersons: require('../assets/images/callPersons.png'),
   insufficient: require('../assets/images/insufficient.png'),
+  TotalDownloadsGraph: require('../assets/images/TotalDownloadsGraph.png'),
+  ConsultationsGraph: require('../assets/images/ConsultationsGraph.png'),
 };

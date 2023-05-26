@@ -58,12 +58,13 @@ function AdminCustomDrawer({navigation, props}) {
           <View style={{gap: responsiveWidth(4)}}>
             <Item title="Home" logo={Icons.home} />
             <Item title="Wallet" logo={Icons.walletCircle} />
-            <Item title="Slot Bookings" logo={Icons.SlotBooking} />
+            <Item title="User Management" logo={Icons.SlotBooking} />
+            <Item title="Vendor Management" logo={Icons.SlotBooking} />
             <Item title="Call History" logo={Icons.CallHistory} />
             <Item title="Chat History" logo={Icons.ChatHistory} />
+            <Item title="Access Management" logo={Icons.AccessManagement} />
             <Separator height={responsiveWidth(5)} />
 
-            <Item title="Terms & Conditions" logo={Icons.TermsAndConditions} />
             <Item title="Logout" logo={Icons.Logout} />
           </View>
         </ScrollView>

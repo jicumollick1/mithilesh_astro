@@ -16,6 +16,7 @@ export default {
   ChatHistory: require('../assets/icons/ChatHistory.png'),
   TermsAndConditions: require('../assets/icons/TermsAndConditions.png'),
   Logout: require('../assets/icons/Logout.png'),
+  AccessManagement: require('../assets/icons/AccessManagement.png'),
   yellowStar: require('../assets/icons/yellowStar.png'),
   dot3: require('../assets/icons/dot3.png'),
 };
