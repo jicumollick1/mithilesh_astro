@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import LinearGradient from 'react-native-linear-gradient';
 import {
   View,
   Text,
@@ -7,19 +8,21 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
+  Dimensions,
   ImageBackground,
-  Platform ,
-  Alert, 
-  SafeAreaView
+  Platform,
+  Alert,
+  SafeAreaView,
 } from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 import {
   responsiveHeight,
   responsiveWidth,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
-import { general } from '../constants';
+import {Colors, Images, general} from '../constants';
 import WelcomeCard from '../components/WelcomeCard';
-
 
 const pageStyle = isActive =>
   isActive
@@ -45,7 +48,6 @@ const Pagination = ({index}) => {
 };
 
 const OnboardingScreen = ({navigation}) => {
-  
   const [welcomeListIndex, setWelcomeListIndex] = useState(0);
   const welcomeList = useRef();
   const onViewRef = useRef(({changed}) => {
@@ -64,14 +66,13 @@ const OnboardingScreen = ({navigation}) => {
   };
 
   return (
-    <ImageBackground source={{}} style={styles.container}>
-     <SafeAreaView/>
+    <LinearGradient colors={['#5FA5F7', '#FFE821']} style={[styles.container]}>
+      <SafeAreaView />
       <StatusBar
         barStyle={'dark-content'}
-        backgroundColor={'cyan'}
+        backgroundColor={'#5FA5F6'}
         translucent
       />
-  
 
       <View style={styles.welcomeListConatiner}>
         <FlatList
@@ -87,6 +88,7 @@ const OnboardingScreen = ({navigation}) => {
           renderItem={({item}) => (
             <WelcomeCard
               {...item}
+              key={item.title}
               list={welcomeList}
               index={welcomeListIndex}
             />
@@ -97,6 +99,7 @@ const OnboardingScreen = ({navigation}) => {
 
       <View
         style={{
+          zIndex: 1,
           position: 'absolute',
           bottom: responsiveWidth(10),
           flexDirection: 'row',
@@ -105,42 +108,35 @@ const OnboardingScreen = ({navigation}) => {
           width: '100%',
           paddingHorizontal: responsiveWidth(4.5),
           height: responsiveHeight(4),
-        }}>        
-
+        }}>
         {welcomeListIndex === 3 ? (
-          <View style={{alignItems: 'center', width: '100%'}}>
-            <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.nextBtn}>
-              <Text style={styles.nextText}>Login</Text>
-              
-              <Image
-                source={{}}
-                style={styles.longRightArrow}
-              />
+          <View style={{width: '100%', alignItems: 'center'}}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('WelcomeScreen')}
+              style={styles.getBtn}>
+              <Text style={styles.getText}>Get Started</Text>
+
+              {/* <Image source={{}} style={styles.longRightArrow} /> */}
             </TouchableOpacity>
           </View>
         ) : (
-          <View style={{width:'100%',alignItems:'center'}}>
-            <TouchableOpacity onPress={() => pagescroll()} style={styles.nextBtn}>
-              <Text style={styles.nextText}>Next</Text>
-              
-              <Image
-                source={{}}
-                style={styles.longRightArrow}
-              />
-            </TouchableOpacity>
-          </View>
+          <></>
         )}
       </View>
-    </ImageBackground>
+      <View>
+        {/* bottom Image  */}
+        <Image source={Images.welcomeBottom} style={styles.welcomeBottom} />
+      </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
   },
   pageContainer: {
     flexDirection: 'row',
@@ -152,24 +148,32 @@ const styles = StyleSheet.create({
     borderRadius: responsiveHeight(1),
     marginHorizontal: responsiveWidth(1.3),
   },
-  nextBtn: {
+  getBtn: {
     alignItems: 'center',
-    justifyContent:'center',
+    justifyContent: 'center',
     borderWidth: responsiveWidth(0.3),
     width: responsiveWidth(85),
     height: responsiveHeight(6.5),
     flexDirection: 'row',
-    borderColor:'yellow',
+    borderColor: 'yellow',
+    backgroundColor: '#2A4FD3',
+    borderRadius: 10,
   },
-  nextText: {
-  
+  getText: {
     fontSize: responsiveFontSize(2.5),
-    color: 'blue',
+    color: '#fff',
   },
   longRightArrow: {
     width: responsiveWidth(7.5),
     height: responsiveWidth(7.5),
     resizeMode: 'contain',
+  },
+  welcomeBottom: {
+    position: 'absolute',
+    bottom: 0,
+    left: width * -0.44,
+    width: width * 0.9,
+    height: 100,
   },
 });
 

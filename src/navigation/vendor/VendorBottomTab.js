@@ -1,4 +1,4 @@
-import React, {useRef, useContext, useEffect} from 'react';
+import React, {useRef} from 'react';
 import {View, Text, Image, Animated, Dimensions, Platform} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -7,15 +7,17 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import {t} from 'i18next';
-import {Icons} from '../constants';
-import Separator from '../components/Separator';
-import Home from '../pages/user/Home';
-import Phone from '../pages/user/Phone';
-import Profile from '../pages/user/Profile';
-import Wallet from '../pages/user/Wallet';
+import {Colors, Icons} from '../../constants';
+import Separator from '../../components/Separator';
+
+import Wallet from '../../pages/user/Wallet';
+import colors from '../../constants/colors';
+import Home from '../../pages/vendor/Home';
+import Profile from '../../pages/vendor/Profile';
+import LiveChatCalls from '../../pages/vendor/LiveChatCalls';
+
 const Tab = createBottomTabNavigator();
-const UserBottomTab = ({navigation}) => {
+const VendorBottomTab = ({navigation}) => {
   // animated tab indicator
   const tabOffsetValue = useRef(new Animated.Value(0)).current;
 
@@ -32,17 +34,17 @@ const UserBottomTab = ({navigation}) => {
           tabBarIcon: ({focused}) => {
             let activeIcon, inActiveIcon, name;
             if (route.name === 'Home') {
-              inActiveIcon = Icons.homeFilled;
+              inActiveIcon = Icons.homeEmpty;
               activeIcon = Icons.homeFilled;
               name = 'Home';
-            } else if (route.name === 'Phone') {
-              inActiveIcon = Icons.phone;
-              activeIcon = Icons.phone;
-              name = 'Phone';
+             } else if (route.name === 'LiveChatCalls') {
+              inActiveIcon = Icons.LiveChatsEmpty;
+              activeIcon = Icons.LiveChatsFilled;
+              name = 'Live Chats';
             } else if (route.name === 'Wallet') {
-              inActiveIcon = Icons.wallet;
-              activeIcon = Icons.wallet;
-              name = 'Wallet';
+                inActiveIcon = Icons.phoneEmpty;
+                activeIcon = Icons.phoneFilled;
+                name = 'Live Calls';
             } else if (route.name === 'Profile') {
               inActiveIcon = Icons.profile;
               activeIcon = Icons.profile;
@@ -51,7 +53,6 @@ const UserBottomTab = ({navigation}) => {
             return (
               <View
                 style={{
-                  alignItems: 'center',
                   height: '100%',
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -62,14 +63,14 @@ const UserBottomTab = ({navigation}) => {
                   style={{
                     height: responsiveWidth(5),
                     width: responsiveWidth(5),
-                    tintColor: focused ? 'blue' : '#fff',
+                    tintColor: focused ? Colors.secondary : Colors.lightWhite,
                   }}
                   source={focused ? activeIcon : inActiveIcon}
                 />
                 <Separator height={responsiveWidth(2)} />
                 <Text
                   style={{
-                    color: focused ? 'blue' : '#fff',
+                    color: focused ? Colors.secondary : Colors.lightWhite,
                     fontSize: responsiveFontSize(1.4),
                   }}>
                   {name}
@@ -79,7 +80,7 @@ const UserBottomTab = ({navigation}) => {
             );
           },
           tabBarStyle: {
-            backgroundColor: 'yellow',
+            backgroundColor: colors.primary,
             height:
               Platform.OS === 'ios' ? responsiveWidth(25) : responsiveWidth(14),
             borderTopWidth: 0,
@@ -111,8 +112,8 @@ const UserBottomTab = ({navigation}) => {
               }).start();
             },
           })}
-          name="Phone"
-          component={Phone}
+          name="LiveChatCalls"
+          component={LiveChatCalls}
         />
         <Tab.Screen
           listeners={({navigation, route}) => ({
@@ -143,7 +144,7 @@ const UserBottomTab = ({navigation}) => {
         style={{
           width: getWidth() / 2.5,
           height: responsiveHeight(0.6),
-          backgroundColor: 'blue',
+          backgroundColor: Colors.secondary,
           left: responsiveWidth(8),
           transform: [{translateX: tabOffsetValue}],
           bottom:
@@ -155,4 +156,4 @@ const UserBottomTab = ({navigation}) => {
   );
 };
 
-export default UserBottomTab;
+export default VendorBottomTab;
