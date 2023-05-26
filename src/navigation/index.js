@@ -12,6 +12,7 @@ import Step2 from '../pages/Step2';
 import Step1 from '../pages/Step1';
 import Step3 from '../pages/Step3';
 import Admin from '../routes/Admin';
+import Vendor from '../routes/Vendor';
 const Stack = createStackNavigator();
 
 const data = {};
@@ -20,6 +21,7 @@ const Navigators = () => {
     <Context.Provider value={data}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name={'Vendor'} component={Vendor} />
           <Stack.Screen name={'Admin'} component={Admin} />
           <Stack.Screen name={'OnboardingScreen'} component={OnboardingScreen} />
           <Stack.Screen name={'WelcomeScreen'} component={WelcomeScreen} />
