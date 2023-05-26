@@ -59,6 +59,12 @@ const AdminHome = () => {
                                 </View>
                             </View>
                         </View>
+                        <View>
+                            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+                                <Text style={{color: Colors.black, fontWeight: 'bold', fontSize: responsiveFontSize(2.5),}}>Consultaions</Text>
+                                <Text style={{color: Colors.black, fontSize: responsiveFontSize(1.5),}}>Last 7 days</Text>
+                            </View>
+                        </View>
                     </View>
                 </View>
               </View>
